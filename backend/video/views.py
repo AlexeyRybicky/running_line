@@ -17,6 +17,7 @@ class UserTextView(APIView):
 
     # pylint: disable=W0613
     def get(self, request):
+        """получение списка вводимого текста"""
         texts = VideoText.objects.all()
         serializer = VideoTextSerializer(texts, many=True)
         return Response(serializer.data)
