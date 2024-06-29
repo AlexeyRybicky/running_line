@@ -40,11 +40,13 @@ class VideoTextModelTest(TestCase):
         self.video = VideoText.objects.create(text="fake text")
         self.fake_text_db = VideoText.objects.get(pk=self.video.pk)
 
+    # pylint: disable=W0212
     def test_text_blank(self):
         """Тест для проверки пустого значения"""
         blank = self.fake_text_db._meta.get_field("text").blank
         self.assertFalse(blank)
 
+    # pylint: disable=W0212
     def test_text_unique(self):
         """Тест для проверки уникальности поля"""
         unique = self.fake_text_db._meta.get_field("text").unique
