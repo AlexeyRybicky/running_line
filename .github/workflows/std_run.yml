@@ -45,7 +45,7 @@ jobs:
     - name: coverage-report
       working-directory: backend
       run: |
-        poetry run coverage report --source='.'
+        poetry run coverage report
     - name: pep-test
       working-directory: backend
       run: |
