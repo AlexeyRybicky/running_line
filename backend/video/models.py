@@ -4,6 +4,9 @@ from django.db import models
 
 
 class VideoText(models.Model):
+    """Представляет модель для отображения текста на основе которого создавалось видео"""
+    objects: models.Manager
+
     text = models.TextField(
         max_length=250,
         blank=True,
@@ -11,5 +14,6 @@ class VideoText(models.Model):
         help_text="Текст для видео",
     )
 
+    # pylint: disable=E0307
     def __str__(self):
         return self.text

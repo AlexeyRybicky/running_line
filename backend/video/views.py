@@ -7,9 +7,9 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from .models import VideoText
-from .serializers import VideoTextSerializer
-from .utils import create_video
+from video.models import VideoText
+from video.serializers import VideoTextSerializer
+from video.utils import create_video
 
 
 class UserTextView(APIView):
