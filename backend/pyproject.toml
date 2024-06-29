@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "backend"
+version = "0.1.0"
+description = "тестовое задание для бегущей строки"
+authors = ["Aleksey <ranangariel@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django = "^5.0.6"
+psycopg2 = "^2.9.9"
+
+
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.5.4"
+pylint = "^3.2.5"
+
+
+[tool.coverage.run]
+omit = [
+    "manage.py",
+    "core/wsgi.py",
+    "core/asgi.py",
+]
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
