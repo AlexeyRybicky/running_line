@@ -44,7 +44,14 @@ OUR_APPS = [
     'video.apps.VideoConfig',
 ]
 
+LIBRARIES = [
+    'rest_framework',
+    'drf_yasg',
+]
+
 INSTALLED_APPS += OUR_APPS
+INSTALLED_APPS += LIBRARIES
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
