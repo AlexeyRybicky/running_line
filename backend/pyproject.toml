@@ -24,7 +24,8 @@ omit = [
     "manage.py",
     "core/wsgi.py",
     "core/asgi.py",
-    "config-3.py"
+    "config-3.py",
+    "config.py"
 ]
 
 [build-system]
