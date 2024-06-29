@@ -6,7 +6,7 @@ from video.models import VideoText
 
 
 # pylint: disable=missing-docstring
-class VideoTextModelCreateTest(TestCase):
+class VideoTextModelCreateTests(TestCase):
     def setUp(self):
         self.assertEqual(VideoText.objects.count(), 0)
 
@@ -33,7 +33,7 @@ class VideoTextModelCreateTest(TestCase):
 
 
 # pylint: disable=missing-docstring
-class VideoTextModelTest(TestCase):
+class VideoTextModelTests(TestCase):
     def setUp(self):
         self.fake_text = "fake text"
         self.assertEqual(VideoText.objects.count(), 0)
