@@ -24,6 +24,7 @@ omit = [
     "manage.py",
     "core/wsgi.py",
     "core/asgi.py",
+    "video/templates/"
 ]
 
 [build-system]
