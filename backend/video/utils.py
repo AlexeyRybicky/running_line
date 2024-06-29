@@ -6,6 +6,9 @@ import cv2
 import numpy as np
 
 
+# TODO: разобраться с ошибками pylint R0914, E1101
+# pylint: disable=R0914
+# pylint: disable=E1101
 def create_video(text):
     """
     Создает видео с заданным текстом.
