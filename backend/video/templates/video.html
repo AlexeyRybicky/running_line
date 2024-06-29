@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Video</title>
+</head>
+<body>
+    <h1>Введите текст:</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="text">
+        <button type="submit" id="create-video-btn">Создать видео</button>
+    </form>
+</body>
+</html>
