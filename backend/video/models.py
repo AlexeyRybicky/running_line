@@ -7,9 +7,9 @@ class VideoText(models.Model):
     """Представляет модель для отображения текста на основе которого создавалось видео"""
     objects: models.Manager
 
-    text = models.TextField(
+    text = models.CharField(
         max_length=250,
-        blank=True,
+        blank=False,
         unique=False,
         help_text="Текст для видео",
     )
