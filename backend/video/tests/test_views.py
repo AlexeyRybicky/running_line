@@ -11,7 +11,7 @@ class UserTextViewTest(TestCase):
     def setUp(self):
         self.client = APIClient()
         self.texts = VideoText.objects.all()
-        self.link = '/api/line_text/'
+        self.link = '/api/text_list/'
 
     def test_get_text_list(self):
         """Тест для проверки получения списка вводимого текста"""
