@@ -36,6 +36,7 @@ def create_video_view(request):
         video_file_path = create_video(text)
         with open(video_file_path, 'rb') as f:
             response = HttpResponse(f.read(), content_type='video/mp4')
-            response['Content-Disposition'] = f'attachment; filename="video{unique_video_suffix}.mp4"'
+            response['Content-Disposition'] = (f'attachment; '
+                                               f'filename="video{unique_video_suffix}.mp4"')
             return response
     return render(request, 'video.html')

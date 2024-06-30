@@ -8,6 +8,7 @@ import numpy as np
 
 # pylint: disable=R0914
 # pylint: disable=E1101
+# pylint: disable=R1732
 def create_video(text):
     """
     Создает видео с заданным текстом.
