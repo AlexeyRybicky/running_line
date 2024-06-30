@@ -3,6 +3,9 @@
 и отображения списка вводимого текста
 """
 
+import uuid
+
+from django.http import HttpResponse
 from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -25,9 +28,14 @@ class UserTextView(APIView):
 
 def create_video_view(request):
     """Функция для обработки запросов на создание видео c бегущей строкой"""
+    unique_video_suffix = str(uuid.uuid4())[:3]
+
     if request.method == 'POST':
         text = request.POST['text']
         VideoText.objects.create(text=text)
-        create_video(text)
-        return render(request, 'video.html', {'text': text})
+        video_file_path = create_video(text)
+        with open(video_file_path, 'rb') as f:
+            response = HttpResponse(f.read(), content_type='video/mp4')
+            response['Content-Disposition'] = f'attachment; filename="video{unique_video_suffix}.mp4"'
+            return response
     return render(request, 'video.html')

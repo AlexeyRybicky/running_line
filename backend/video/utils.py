@@ -1,6 +1,6 @@
 """В модуле содержиться скрипт для создания видео"""
 
-import uuid
+import tempfile
 
 import cv2
 import numpy as np
@@ -16,18 +16,19 @@ def create_video(text):
         text: Текст, который будет отображаться в видео.
 
     Возвращает:
-        None
+       video_file_path: путь к созданному видеофайлу
     """
 
     # Основные настройки для создания видео
     fps = 30
     seconds = 3
     frame_count = fps * seconds
-    unique_video_suffix = str(uuid.uuid4())[:3]
 
     width, height = 640, 480
+    # создание временного файла, будет удален после закрытия
+    video_file_path = tempfile.NamedTemporaryFile(suffix='.mp4').name
     video = cv2.VideoWriter(
-        f'video_{unique_video_suffix}.mp4',
+        video_file_path,
         cv2.VideoWriter_fourcc(*'mp4v'),
         fps, (width, height)
     )
@@ -54,3 +55,4 @@ def create_video(text):
         y += dy
 
     video.release()
+    return video_file_path
