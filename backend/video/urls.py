@@ -7,6 +7,6 @@ from .views import UserTextView, create_video_view
 app_name = 'video_text'
 
 urlpatterns = [
-    path('line_text/', UserTextView.as_view(), name='video_text'),
+    path('text_list/', UserTextView.as_view(), name='video_text'),
     path('create_video/', create_video_view, name='create_video'),
 ]
