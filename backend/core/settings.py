@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-=dpu-c7s2bz=27=a(sucgy)yrw!tz^j7lrv-&z(9rpaivf%!4%
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'ngrock_public_url',
+    'localhost',
+    '127.0.0.1',
 ]
 
 
