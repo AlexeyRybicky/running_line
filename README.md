@@ -1,5 +1,9 @@
 # Инструкция по запуску
 
+## Важно:
+временно поменял СУБД на SQLite
+если хотите развернуть проект с помощью Docker, поменяйте СУБД в core/settings
+
 1. Скачать репозиторий выполнив команду:
 ```shell
 git clone https://github.com/AlexeyRybicky/running_line.git
