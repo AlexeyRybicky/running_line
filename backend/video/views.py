@@ -7,7 +7,6 @@ import uuid
 
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_protect
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
@@ -27,7 +26,6 @@ class UserTextView(APIView):
         return Response(serializer.data)
 
 
-@csrf_protect
 def create_video_view(request):
     """Функция для обработки запросов на создание видео c бегущей строкой"""
     unique_video_suffix = str(uuid.uuid4())[:3]
