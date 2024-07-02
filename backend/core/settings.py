@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-=dpu-c7s2bz=27=a(sucgy)yrw!tz^j7lrv-&z(9rpaivf%!4%
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'ngstart.public_url',
+    'ngrock_public_url',
 ]
 
 
