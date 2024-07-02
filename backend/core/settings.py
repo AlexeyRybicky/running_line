@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 import os
+import re
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,9 +30,9 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',
     '127.0.0.1',
-    "ngrock_public_url",
 ]
 
+ALLOWED_HOSTS.extend(re.compile(r'ngrok-free\.app$').findall([ngrock_public_url]))
 
 # Application definition
 
