@@ -45,6 +45,9 @@ def create_video(text):
     x, y = width, (height + text_size[1] // 2) // 2  # Начальная позиция текста
     dx, dy = -text_size[0] // frame_count, 0  # направление движения текста
 
+    if text_size[0] < width // 2:
+        dx, dy = -(width // 2) // frame_count, 0
+
     # Cоздание последовательности кадров для видео.
     for _ in range(frame_count):  # 3 seconds
         img = np.zeros((height, width, 3), np.uint8)

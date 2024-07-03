@@ -26,6 +26,7 @@ class UserTextView(APIView):
         serializer = VideoTextSerializer(texts, many=True)
         return Response(serializer.data)
 
+
 @csrf_exempt
 def create_video_view(request):
     """Функция для обработки запросов на создание видео c бегущей строкой"""
